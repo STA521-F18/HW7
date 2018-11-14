@@ -1,0 +1,65 @@
+---
+title: "HW7: TEAM  [my team number/name here]"
+author: "[my team members here]"
+date: "Due Date in Sakai"
+output: html_notebook
+---
+
+1. (work individually)  Complete Exercise 7 in ISLR Chapter 6  
+
+2. For $p=2$ create 4 plots similar to Figure 6.7 in ISLR:  1) Plot the contours of the log likelihood surface for a  bivariate normal likelihood for $\beta_1$ and $\beta_2$ with centered at 1 and 2.5, and with variances 1 and 2, with correlation -0.85 for $\hat{\beta}_1$ and $\hat{\beta}_2$ respectively.  For each, add the  contours of the log density of $\beta_1$ and $\beta_2$ for the case of a)  ridge regression, b) lasso (double exponential prior) c) independent Cauchy priors   (Student t densities with 1 degree of freedom), and d) independent Generalized Double Pareto as in the lab.   Comment on which ones will lead to variable selection under the Maximum a Posterior (MAP) estimate (equivalent to a penalized likelihood estimator)
+
+3.  Refer to the diabetes data from Hoff 9.3.2 with 64 variables.  In the code below modify the seed for the random number to be your Team Number and load the training and test data.
+
+```{r}
+set.seed(0)  # make team number
+source("yX.diabetes.train.txt")
+diabetes.train = as.data.frame(diabetes.train)
+
+source("yX.diabetes.test.txt")
+diabetes.test = as.data.frame(diabetes.test)
+colnames(diabetes.test)[1] = "y"
+```
+
+    b. Using the training data, fit the model using OLS and create a plot of confidence intervals for the coefficients. Obtain the RMSE for predicting the diabetes progression (`y`)  for the test data under OLS.  Using the training data, create prediction intervals for the test data and plot the intervals and observed test points.  Calculate the percent of intervals that include the test responses.
+
+```{r ols}
+
+```
+    
+    c. Obtain the RMSE for the test data using ridge regression with $\lambda$ chosen by cross-validation (the cross-validation for choosing $\lambda$ should only use the training data).   Can you create prediction intervals and coverage?   (for the ridge regression package that you use, do you need to standardize the variables first?)      
+    
+```{r ridge}
+
+```
+    
+    
+    d. Obtain the RMSE for the test data using lasso with $\lambda$ chosen by cross-validation.  Report on which variables are selected by lasso. Can you create prediction intervals and coverage?  Explain why or why not. 
+    
+```{r lasso}
+
+```
+    
+    e. Obtain the RMSE for the test data using  the mixtures of $g$ priors under BMA with the `prior='JZS'.  Report on  which variables are viewed as important under the BMA model.  Create prediction intervals and determine what percent of the intervals include the test responses.  (see `diabetes.Rmd` in repo for starter code)
+
+```{r BMA}
+
+```
+
+    f. Modify the code from lab to fit the generalized double pareto model using JAGS and  create a plot of the credible intervals for the coefficients.  Obtain the RMSE for the test data  and  create a plot of the prediction intervals with the test points  and calculate the coverage.   
+    
+```{r gdp}
+
+```
+    
+   
+
+4.  Provide a summary paragraph and comment on the results obtained in 3. How accurately can you predict the disease prediction?  Is there much difference in RMSEs among these methods? Is there much difference in coverage among these methods?  Which variables seem to be the ost imobrtant?  What are the pros and cons of the different methods?
+
+
+
+    
+    
+
+   
+
